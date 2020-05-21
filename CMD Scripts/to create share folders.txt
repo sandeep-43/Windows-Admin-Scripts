@@ -1,0 +1,4 @@
+net share sballme1$=f:\data\users\sballme1 /grant:everyone,change
+net share sbeckman$=f:\data\users\sbeckman /grant:everyone,change
+net share sblomkvi$=f:\data\users\sblomkvi /grant:everyone,change
+net share sbrooks$=f:\data\users\sbrooks /grant:everyone,change

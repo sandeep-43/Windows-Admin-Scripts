@@ -1,0 +1,15 @@
+cmd
+
+systeminfo | find "System Boot Time"
+---------------------------------
+PS
+----
+Get-WmiObject win32_operatingsystem | select csname, @{LABEL=’LastBootUpTime’
+
+;EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}}
+
+-------------------
+Get-CimInstance -ClassName win32_operatingsystem | select csname, lastbootuptime
+
+-------------------
+

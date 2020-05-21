@@ -1,0 +1,27 @@
+cmd
+
+systeminfo | find "System Boot Time"
+---------------------------------
+PS
+----
+Get-WmiObject win32_operatingsystem | select csname, @{LABEL=’LastBootUpTime’
+
+;EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}}
+
+-------------------
+Get-CimInstance -ClassName win32_operatingsystem | select csname, lastbootuptime
+
+-------------------
+
+For NA regio-
+-------------
+get-content na.txt | foreach{Get-WmiObject win32_operatingsystem -computer $_ | select csname, @{LABEL=’LastBootUpTime';EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}},@{LABEL='Count Of Days';EXPRESSION={(Get-Date) - ($_.ConvertToDateTime($_.lastbootuptime))}}} | export-csv uptimena.csv
+
+For EMEA-defrm8p1
+get-content emea.txt | foreach{Get-WmiObject win32_operatingsystem -computer $_ | select csname, @{LABEL=’LastBootUpTime';EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}},@{LABEL='Count Of Days';EXPRESSION={(Get-Date) - ($_.ConvertToDateTime($_.lastbootuptime))}}} | export-csv uptimeemea.csv
+
+For ASIA-cns5mv01
+get-content asia.txt | foreach{Get-WmiObject win32_operatingsystem -computer $_ | select csname, @{LABEL=’LastBootUpTime';EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}},@{LABEL='Count Of Days';EXPRESSION={(Get-Date) - ($_.ConvertToDateTime($_.lastbootuptime))}}} | export-csv uptimeasia.csv
+
+For LA-brszas22
+get-content la.txt | foreach{Get-WmiObject win32_operatingsystem -computer $_ | select csname, @{LABEL=’LastBootUpTime';EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}},@{LABEL='Count Of Days';EXPRESSION={(Get-Date) - ($_.ConvertToDateTime($_.lastbootuptime))}}} | export-csv uptimela.csv

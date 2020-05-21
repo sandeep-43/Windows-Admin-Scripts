@@ -1,0 +1,1 @@
+﻿gc C:\Temp\user.txt | foreach{gwmi win32_computersystem -cn $_ | Select-Object Name,Domain} | export-csv c:\temp\rsmScopeServersAvinaylist.csv

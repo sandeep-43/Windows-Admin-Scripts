@@ -1,0 +1,9 @@
+robocopy "source" "destination" /E /mir /sec /zb /copyall /R:1 /W:1 /log:C:\temp\username.txt 
+
+
+
+robocopy "\\ienam8f1\bbourke1$\My Pictures" "\\gbldm8f1\bbourke1$\My Pictures" /E /mir /sec /zb /copyall /R:1 /W:1 /log:C:\temp\pic.txt
+
+
+
+\ienam8f1\bbourke1$\My Picture

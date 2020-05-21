@@ -1,0 +1,13 @@
+If a server hangs during shutdown
+ 
+You can try run the following commands to kill a hung processes, the most common hung process during reboot/shutdown is winlogon. (You will need to download sysinternals from Microsoft and run the command prompt with admin account)
+ 
+•         Pskill \\Remote_Machine_Name winlogon
+ 
+Failing that, you can initiate a kill command on lsass, this will force Windows to shutdown in about 60-90 seconds.
+ 
+•         Pskill \\remote_Machine_Name lsass
+ 
+Ie:
+Pskill \\hostname winlogon
+Pskill \\hostname lsass.exe

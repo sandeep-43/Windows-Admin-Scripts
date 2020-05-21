@@ -1,0 +1,13 @@
+get-content abc.txt | foreach{get-eventlog -logname system -source user32 -after 1/4/2016 -before 1/5/2016 -computer $_ } |export-csv result.csv
+
+
+Get-WinEvent -FilterHashTable @{ LogName = "Microsoft-Windows-Diagnostics-Performance/Operational"; StartTime = $date; ID = 100 }
+
+
+PS C:\Users\ssingh4> get-content abc.txt | foreach{Get-WinEvent -FilterHashtable @{logname=’system'; id=1074; StartTime=”1/6/2016"} -computer $_} | export-csv uptimeresult.csv
+
+Get-HotFix -id kb2993651 -computer server | % { If($_.psbase.properties["installedOn"].Value -ne ''){[DateTime]::Parse($_.psbase.properties["installedOn"].Value)}Else{[DateTime]::Parse('1/1/1900')} }
+
+
+Get-HotFix -computer server| Select-Object description,hotfixid,installedby,@{l="InstalledOn";e={[DateTime]::Parse($_.psbase.properties["installedon"].value,$([System.Globalization.CultureInfo]::GetCultureInfo("en-US")))}}
+

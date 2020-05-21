@@ -1,0 +1,4 @@
+net share /delete sballme1$
+net share /delete sbeckman$
+net share /delete sblomkvi$
+net share /delete sbrooks$

@@ -1,0 +1,27 @@
+netsh dhcp server delete optionvalue 120
+netsh dhcp server delete optiondef 120
+netsh dhcp server delete class MSUCClient
+netsh dhcp server add optiondef 120 UCSipServer Binary 0 comment="Sip Server Fqdn"
+netsh dhcp server set optionvalue 120 Binary 000875636472706F6F6C03656E7408636C617269616E7403636F6D00
+netsh dhcp server add class MSUCClient "UC Vendor Class Id" "MS-UC-Client" 1
+netsh dhcp server add optiondef 1 UCIdentifier Binary 0 Vendor=MSUCClient comment="UC Identifier"
+netsh dhcp server set optionvalue 1 Binary vendor=MSUCClient 4D532D55432D436C69656E74
+netsh dhcp server add optiondef 2 URLScheme Binary 0 Vendor=MSUCClient comment="URL Scheme"
+netsh dhcp server set optionvalue 2 Binary vendor=MSUCClient 6874747073
+netsh dhcp server add optiondef 3 WebServerFqdn Binary 0 Vendor=MSUCClient comment="Web Server Fqdn"
+netsh dhcp server set optionvalue 3 Binary vendor=MSUCClient 63686C746F6469727030352E656E742E636C617269616E742E636F6D
+netsh dhcp server add optiondef 4 WebServerPort Binary 0 Vendor=MSUCClient comment="Web Server Port"
+netsh dhcp server set optionvalue 4 Binary vendor=MSUCClient 343433
+netsh dhcp server add optiondef 5 CertProvRelPath Binary 0 Vendor=MSUCClient comment="Cert Prov Relative Path"
+netsh dhcp server set optionvalue 5 Binary vendor=MSUCClient 2F4365727450726F762F4365727450726F766973696F6E696E67536572766963652E737663
+
+
+
+
+netsh dhcp server scope <SCOPE IP> set optionvalue 120 Binary 000875636472706F6F6C03656E7408636C617269616E7403636F6D00  ####UCSipServer
+
+netsh dhcp server scope <SCOPE IP> set optionvalue 3 Binary vendor=MSUCClient 63686C746F6469727030352E656E742E636C617269616E742E636F6D	####WebServerFqdn
+
+netsh dhcp server scope <SCOPE IP> set optionvalue 004 IPADDRESS <IP1> <IP2> <IP3>  #### Time server
+
+netsh dhcp server scope <SCOPE IP> set optionvalue 042 IPADDRESS <IP1> <IP2> <IP3>  #### NTP Server

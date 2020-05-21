@@ -1,0 +1,4 @@
+$printserver = "printserver.contoso.local" 
+Get-WMIObject -class Win32_Printer -computer $printserver | Select Name,DriverName,PortName | Export-CSV -path 'C:\Users\rahmat.fedayizada\Desktop\printers.csv'
+
+Get-WMIObject -class Win32_Printer -computer hostname | Select Name,PortName | Export-csv -path 'C:\hostname.csv'

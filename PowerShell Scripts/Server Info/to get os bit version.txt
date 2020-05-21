@@ -1,0 +1,1 @@
+get-content serverlist.txt | foreach{get-wmiobject win32_operatingsystem -computer $_ | select-object csname,caption,osarchitecture,servicepackmajorversion} | export-csv output.csv

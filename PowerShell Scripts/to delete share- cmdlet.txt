@@ -1,0 +1,1 @@
+gc abc.txt | foreach{if ($share = Get-WmiObject -Class Win32_Share -cn servername -Filter "Name='$_'") { $share.delete() }}

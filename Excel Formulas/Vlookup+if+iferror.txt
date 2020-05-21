@@ -1,0 +1,3 @@
+=IF(A1=IFERROR(VLOOKUP(A1,$B:$B,1,0),""),"Yes","No")
+
+=IFERROR(VLOOKUP(A1,$B:$B,1,0),"")

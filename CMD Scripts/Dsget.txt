@@ -1,0 +1,10 @@
+
+User membership - dsget user "cn=<username>,ou=<Users>,dc=<thinworld>,dc=<net>" -memberof -expand >memberof.txt
+
+Group Membership - dsget group "cn=<groupname>,ou=<Users>,dc=<thinworld>,dc=<net>" -members -expand >members.txt
+
+Group Membership (SaMAccountname) - DSGET group "cn=<groupname>,OU=<groups>,DC=<thinworld>,DC=<net>" -members -expand | dsget user -samid >members.txt
+
+---------------------------------------------------------------
+Please execute these commands from an elevated command prompt.
+---------------------------------------------------------------

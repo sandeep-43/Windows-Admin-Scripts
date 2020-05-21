@@ -1,0 +1,8 @@
+To get process id (Powershell cmdlet)
+
+get-process appname |select -expand id 
+
+
+To kill a process (cmd)
+
+taskkill /pid 1111 /f

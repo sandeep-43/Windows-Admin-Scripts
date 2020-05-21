@@ -1,0 +1,10 @@
+@echo off
+REM 2009-06-03 RW
+REM Using this command NTFS permissions only get copied.
+REM You have just to enter SOURCE and DESTINATION
+
+REM Example: robocopy.exe "S:\@GMT-2017.07.20-02.00.30\LIO" "S:\LIO" /e /secfix /xo /xn /xc
+echo on
+robocopy.exe "Source" "Destination" /e /secfix /xo /xn /xc
+
+pause

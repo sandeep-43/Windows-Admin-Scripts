@@ -1,0 +1,4 @@
+https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/14/powertip-use-powershell-to-wait-for-a-key-press/
+
+$HOST.UI.RawUI.ReadKey(“NoEcho,IncludeKeyDown”) | OUT-NULL
+$HOST.UI.RawUI.Flushinputbuffer()

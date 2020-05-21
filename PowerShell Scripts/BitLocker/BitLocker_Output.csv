@@ -1,0 +1,5 @@
+"ComputerName","LockStatus","Size","BitLockerVersion","ConversionStatus","PercentageEncrypted","EncryptionMethod","ProtectionStatus","IdentificationField","KeyProtectors"
+"USCHP01866","Unlocked","237.97 GB","2.0","Fully Encrypted","100.0%","AES 128 with Diffuser","Protection Off","None",""
+"USLOW03064","Error","Error","Error","Error","Error","Error","Error","Error","Error"
+"USCHP01881","Unlocked","237.97 GB","2.0","Fully Encrypted","100.0%","AES 128 with Diffuser","Protection On","None",""
+"ABCDEFGH","Error","Error","Error","Error","Error","Error","Error","Error","Error"

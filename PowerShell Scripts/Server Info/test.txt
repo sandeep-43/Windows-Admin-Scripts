@@ -1,0 +1,6 @@
+
+get-content na.txt | foreach{Get-WmiObject win32_operatingsystem -computer $_ | select csname, @{LABEL=’LastBootUpTime';EXPRESSION={$_.ConverttoDateTime($_.lastbootuptime)}},@{LABEL='Count Of Days';EXPRESSION={(Get-Date) - ($_.ConvertToDateTime($_.lastbootuptime))}}} | export-csv uptimena.csv
+
+
+
+(Get-Date) - ($os.ConvertToDateTime($os.lastbootuptime))

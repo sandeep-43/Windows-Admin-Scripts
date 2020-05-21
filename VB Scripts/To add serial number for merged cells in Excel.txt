@@ -1,0 +1,18 @@
+Sub NumberCellsAndMergedCells()
+    'Update 20141028
+    Dim Rng As Range
+    Dim WorkRng As Range
+    On Error Resume Next
+    xTitleId = "KutoolsforExcel"
+    Set WorkRng = Application.Selection
+    Set WorkRng = Application.InputBox("Range", xTitleId, WorkRng.Address, Type:=8)
+    Set WorkRng = WorkRng.Columns(1)
+    xIndex = 1
+    Set Rng = WorkRng.Range("A1")
+    Do While Not Intersect(Rng, WorkRng) Is Nothing
+        Rng.Value = xIndex
+        xIndex = xIndex + 1
+        Set Rng = Rng.MergeArea.Offset(1)
+    Loop
+End Sub
+

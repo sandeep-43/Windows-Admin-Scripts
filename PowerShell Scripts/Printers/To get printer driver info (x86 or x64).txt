@@ -1,0 +1,6 @@
+https://www.uvm.edu/~gcd/2013/05/printer-drivers-and-architectures-with-powershell/
+
+
+
+gwmi win32_printerdriver | select name,@{LABEL='x86'; EXPRESSION={ if ($_.supportedPlatform -eq 'Windows NT x86') {write-output "True"} else {Write-output "False"}}}, @{LABEL='x64';Expression={ if ($_.supportedplatform -eq 'Windows x64' ) {Write-output "True"} else {write-output "False"}}} | Out-gridview
+

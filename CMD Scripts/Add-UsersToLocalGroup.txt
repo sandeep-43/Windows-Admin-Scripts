@@ -1,0 +1,4 @@
+psexec \\serverFQDN -u "domain\username" -p "password" -i  -d -s net localgroup "Performance Monitor Users" /add
+ "domain\user id to be added in the group"
+psexec \\serverFQDN -u "domain\username" -p "password" -i  -d -s net localgroup "Distributed COM Users" /add
+ "domain\user id to be added in the group"
